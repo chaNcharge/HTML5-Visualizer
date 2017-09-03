@@ -1,7 +1,7 @@
 HTML5 Audio Visualizer
 ======================
 
-## This An audio spectrum visualizer built with HTML5 Audio API and JavaScript
+### This An audio spectrum visualizer built with HTML5 Audio API and JavaScript
 
 # How to use:
 
