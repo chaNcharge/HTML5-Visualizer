@@ -93,7 +93,7 @@ Visualizer.prototype = {
             if (audioContext === null) {
                 return;
             };
-            that._updateInfo('Decoding...', true);
+            that._updateInfo('Decoding', true);
             audioContext.decodeAudioData(fileResult, function(buffer) {
                 that._updateInfo('Decode success, start the visualizer', true);
                 that._visualize(audioContext, buffer);
