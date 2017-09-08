@@ -26,7 +26,7 @@ Visualizer.prototype = {
         try {
             this.audioContext = new AudioContext();
         } catch (e) {
-            this._updateInfo('!Your browser does not support AudioContext', false);
+            this._updateInfo('Your browser does not support AudioContext', false);
             console.log(e);
         }
     },
@@ -46,7 +46,7 @@ Visualizer.prototype = {
                     that.forceStop = true;
                 };
                 document.getElementById('fileWrapper').style.opacity = 1;
-                that._updateInfo('Uploading', true);
+                that._updateInfo('Uploading...', true);
                 //once the file is ready,start the visualizer
                 that._start();
             };
@@ -93,17 +93,17 @@ Visualizer.prototype = {
             if (audioContext === null) {
                 return;
             };
-            that._updateInfo('Decoding the audio', true);
+            that._updateInfo('Decoding...', true);
             audioContext.decodeAudioData(fileResult, function(buffer) {
-                that._updateInfo('Decode succussfully,start the visualizer', true);
+                that._updateInfo('Decode success, start the visualizer', true);
                 that._visualize(audioContext, buffer);
             }, function(e) {
-                that._updateInfo('!Fail to decode the file', false);
+                that._updateInfo('Failed to decode the file', false);
                 console.log(e);
             });
         };
         fr.onerror = function(e) {
-            that._updateInfo('!Fail to read the file', false);
+            that._updateInfo('Failed to read the file', false);
             console.log(e);
         };
         //assign the file to the reader
